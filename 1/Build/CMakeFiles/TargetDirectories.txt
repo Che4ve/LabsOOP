@@ -1,0 +1,3 @@
+/Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles/lab.dir
+/Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles/edit_cache.dir
+/Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles/rebuild_cache.dir
