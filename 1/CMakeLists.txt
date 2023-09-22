@@ -26,7 +26,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE ${CMAKE_PROJECT_NAME}_lib)
 
 target_include_directories(tests PRIVATE ${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-target_link_libraries(tests PRIVATE ${CMAKE_PROJECT_NAME}_lib gtest gtest_main)
+target_link_libraries(tests PRIVATE ${CMAKE_PROJECT_NAME}_lib)
 
 # Добавляем тесты
 add_test(NAME BASIC COMMAND tests)
