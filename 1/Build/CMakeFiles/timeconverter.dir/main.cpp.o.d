@@ -1,4 +1,5 @@
-CMakeFiles/lab.dir/main.cpp.o: /Users/che4ve/MAI/LabsOOP/1/main.cpp \
+CMakeFiles/timeconverter.dir/main.cpp.o: \
+  /Users/che4ve/MAI/LabsOOP/1/main.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config_site \
