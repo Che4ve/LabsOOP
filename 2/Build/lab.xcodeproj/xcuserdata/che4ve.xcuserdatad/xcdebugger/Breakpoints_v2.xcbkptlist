@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "49078AB3-0AC3-4D07-AD5A-8202A5D049C7"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF26F212-0B88-4DF3-87CA-FB79D105447D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/thirteen.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "Thirteen::set(tenBaseNum)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EF26F212-0B88-4DF3-87CA-FB79D105447D - 2e6d331bbd999f85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "150">
+               </Location>
+               <Location
+                  uuid = "EF26F212-0B88-4DF3-87CA-FB79D105447D - 2e6d331bbd999f85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "EF26F212-0B88-4DF3-87CA-FB79D105447D - 2e6d331bbd999f85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "162">
+               </Location>
+               <Location
+                  uuid = "EF26F212-0B88-4DF3-87CA-FB79D105447D - 2e6d331bbd999f85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D95B17B-17B0-41AE-89D3-FA958BBA07B3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/thirteen.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "Thirteen::set(str13base)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7D95B17B-17B0-41AE-89D3-FA958BBA07B3 - 2e6d331bbd999f60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "286">
+               </Location>
+               <Location
+                  uuid = "7D95B17B-17B0-41AE-89D3-FA958BBA07B3 - 2e6d331bbd999f60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "288">
+               </Location>
+               <Location
+                  uuid = "7D95B17B-17B0-41AE-89D3-FA958BBA07B3 - 2e6d331bbd999f60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "310">
+               </Location>
+               <Location
+                  uuid = "7D95B17B-17B0-41AE-89D3-FA958BBA07B3 - 2e6d331bbd999f60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "195">
+               </Location>
+               <Location
+                  uuid = "7D95B17B-17B0-41AE-89D3-FA958BBA07B3 - 2e6d331bbd999f60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "169">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55348FB1-E915-4101-885B-04F9BF8F8BE1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/thirteen.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "Thirteen::set(str13base)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "55348FB1-E915-4101-885B-04F9BF8F8BE1 - 2e6d331bbd999cbf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "369">
+               </Location>
+               <Location
+                  uuid = "55348FB1-E915-4101-885B-04F9BF8F8BE1 - 2e6d331bbd999cbf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "431">
+               </Location>
+               <Location
+                  uuid = "55348FB1-E915-4101-885B-04F9BF8F8BE1 - 2e6d331bbd999cbf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "241">
+               </Location>
+               <Location
+                  uuid = "55348FB1-E915-4101-885B-04F9BF8F8BE1 - 2e6d331bbd999cbf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "202">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB00CC14-BB60-43E4-AA6A-35A4F01E545C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/thirteen.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "Thirteen::set(tenBaseNum)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5446E4F-0A50-4E36-B85D-059E59A5B0F8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/thirteen.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "E5446E4F-0A50-4E36-B85D-059E59A5B0F8 - 2e6d331bbd999fc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "219">
+               </Location>
+               <Location
+                  uuid = "E5446E4F-0A50-4E36-B85D-059E59A5B0F8 - 2e6d331bbd999fc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "241">
+               </Location>
+               <Location
+                  uuid = "E5446E4F-0A50-4E36-B85D-059E59A5B0F8 - 2e6d331bbd999fc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  uuid = "E5446E4F-0A50-4E36-B85D-059E59A5B0F8 - 2e6d331bbd999fc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Thirteen::set(char const*)"
+                  moduleName = "lab"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/che4ve/MAI/LabsOOP/2/src/thirteen.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "51">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71FCEE73-CF1C-48BC-BCA2-C8425582F549"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "main.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "main(argc, argv)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6784672C-13E8-45FB-9485-174CDE9BA879"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/thirteen.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "Thirteen::set(str13base)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD79874D-FF36-4609-A5ED-727A5401996A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/thirteen.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "Thirteen::set(str13base)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57B16AE2-8442-43B6-B889-2AB1AE30B709"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/thirteen.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "Thirteen::set(str13base)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "93AA672C-B9D9-45CC-895A-55A6BCCB41FC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/thirteen.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "Thirteen::set(str13base)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
