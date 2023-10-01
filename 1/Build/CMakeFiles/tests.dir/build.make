@@ -92,7 +92,10 @@ tests_EXTERNAL_OBJECTS =
 
 tests: CMakeFiles/tests.dir/test/tests.cpp.o
 tests: CMakeFiles/tests.dir/build.make
-tests: libtimeconverter_lib.a
+tests: liblab_lib.a
+tests: /usr/local/lib/libgtest.a
+tests: /usr/local/lib/libgtest_main.a
+tests: /usr/local/lib/libgtest.a
 tests: CMakeFiles/tests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tests.dir/link.txt --verbose=$(VERBOSE)

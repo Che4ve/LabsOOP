@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /Users/che4ve/MAI/LabsOOP/1/Build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/local/Cellar/cmake/3.27.5/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -117,30 +127,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named timeconverter_lib
+# Target rules for targets named lab_lib
 
 # Build rule for target.
-timeconverter_lib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 timeconverter_lib
-.PHONY : timeconverter_lib
+lab_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab_lib
+.PHONY : lab_lib
 
 # fast build rule for target.
-timeconverter_lib/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter_lib.dir/build.make CMakeFiles/timeconverter_lib.dir/build
-.PHONY : timeconverter_lib/fast
+lab_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_lib.dir/build.make CMakeFiles/lab_lib.dir/build
+.PHONY : lab_lib/fast
 
 #=============================================================================
-# Target rules for targets named timeconverter
+# Target rules for targets named lab
 
 # Build rule for target.
-timeconverter: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 timeconverter
-.PHONY : timeconverter
+lab: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab
+.PHONY : lab
 
 # fast build rule for target.
-timeconverter/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter.dir/build.make CMakeFiles/timeconverter.dir/build
-.PHONY : timeconverter/fast
+lab/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/build
+.PHONY : lab/fast
 
 #=============================================================================
 # Target rules for targets named tests
@@ -160,7 +170,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter.dir/build.make CMakeFiles/timeconverter.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -168,7 +178,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter.dir/build.make CMakeFiles/timeconverter.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -176,7 +186,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter.dir/build.make CMakeFiles/timeconverter.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 src/timecalc.o: src/timecalc.cpp.o
@@ -184,8 +194,7 @@ src/timecalc.o: src/timecalc.cpp.o
 
 # target to build an object file
 src/timecalc.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter_lib.dir/build.make CMakeFiles/timeconverter_lib.dir/src/timecalc.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter.dir/build.make CMakeFiles/timeconverter.dir/src/timecalc.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_lib.dir/build.make CMakeFiles/lab_lib.dir/src/timecalc.cpp.o
 .PHONY : src/timecalc.cpp.o
 
 src/timecalc.i: src/timecalc.cpp.i
@@ -193,8 +202,7 @@ src/timecalc.i: src/timecalc.cpp.i
 
 # target to preprocess a source file
 src/timecalc.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter_lib.dir/build.make CMakeFiles/timeconverter_lib.dir/src/timecalc.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter.dir/build.make CMakeFiles/timeconverter.dir/src/timecalc.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_lib.dir/build.make CMakeFiles/lab_lib.dir/src/timecalc.cpp.i
 .PHONY : src/timecalc.cpp.i
 
 src/timecalc.s: src/timecalc.cpp.s
@@ -202,8 +210,7 @@ src/timecalc.s: src/timecalc.cpp.s
 
 # target to generate assembly for a file
 src/timecalc.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter_lib.dir/build.make CMakeFiles/timeconverter_lib.dir/src/timecalc.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter.dir/build.make CMakeFiles/timeconverter.dir/src/timecalc.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_lib.dir/build.make CMakeFiles/lab_lib.dir/src/timecalc.cpp.s
 .PHONY : src/timecalc.cpp.s
 
 test/tests.o: test/tests.cpp.o
@@ -238,9 +245,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... lab"
+	@echo "... lab_lib"
 	@echo "... tests"
-	@echo "... timeconverter"
-	@echo "... timeconverter_lib"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

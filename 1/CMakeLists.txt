@@ -1,32 +1,39 @@
 cmake_minimum_required(VERSION 3.27.5)
-project(timeconverter)
+project(lab)
 
 set(CMAKE_CXX_STANDARD 20)
-SET(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Задаем переменные с переменными
+# Specify source directories
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/test)
 
-# Подключаем дирректории для билда
+# Include directories for regular sources and tests
 include_directories(${INCLUDE_DIR})
 
-# Создаем листы исходников
+# Create a list of source files for the library and main executable
 file(GLOB_RECURSE SOURCES LIST_DIRECTORIES false ${SOURCE_DIR}/*.cpp)
-file(GLOB_RECURSE TEST_SOURCES LIST_DIRECTORIES false ${TEST_DIR}/*.cpp)
-
 add_library(${CMAKE_PROJECT_NAME}_lib ${SOURCES})
 
-add_executable(${PROJECT_NAME} src/timecalc.cpp main.cpp)
+# Main executable
+add_executable(${PROJECT_NAME} main.cpp)
+target_link_libraries(${PROJECT_NAME} ${CMAKE_PROJECT_NAME}_lib)
+
+# Tests
+file(GLOB_RECURSE TEST_SOURCES LIST_DIRECTORIES false ${TEST_DIR}/*.cpp)
 add_executable(tests ${TEST_SOURCES})
+target_link_libraries(tests ${CMAKE_PROJECT_NAME}_lib)
 
-# Связываем библиотеки с исполняемыми файлами
-target_link_libraries(${PROJECT_NAME} PRIVATE ${CMAKE_PROJECT_NAME}_lib)
+# Find Google Test
+find_package(GTest REQUIRED)
 
-target_include_directories(tests PRIVATE ${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+# Include Google Test headers
+include_directories(${GTEST_INCLUDE_DIRS})
 
-target_link_libraries(tests PRIVATE ${CMAKE_PROJECT_NAME}_lib)
+# Link your tests with Google Test
+target_link_libraries(tests ${GTEST_BOTH_LIBRARIES})
 
-# Добавляем тесты
+# Add tests
+enable_testing()
 add_test(NAME BASIC COMMAND tests)

@@ -63,8 +63,8 @@ CMAKE_BINARY_DIR = /Users/che4ve/MAI/LabsOOP/1/Build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/timeconverter_lib.dir/all
-all: CMakeFiles/timeconverter.dir/all
+all: CMakeFiles/lab_lib.dir/all
+all: CMakeFiles/lab.dir/all
 all: CMakeFiles/tests.dir/all
 .PHONY : all
 
@@ -73,71 +73,71 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/timeconverter_lib.dir/clean
-clean: CMakeFiles/timeconverter.dir/clean
+clean: CMakeFiles/lab_lib.dir/clean
+clean: CMakeFiles/lab.dir/clean
 clean: CMakeFiles/tests.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/timeconverter_lib.dir
+# Target rules for target CMakeFiles/lab_lib.dir
 
 # All Build rule for target.
-CMakeFiles/timeconverter_lib.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter_lib.dir/build.make CMakeFiles/timeconverter_lib.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter_lib.dir/build.make CMakeFiles/timeconverter_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles --progress-num=6,7 "Built target timeconverter_lib"
-.PHONY : CMakeFiles/timeconverter_lib.dir/all
+CMakeFiles/lab_lib.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_lib.dir/build.make CMakeFiles/lab_lib.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_lib.dir/build.make CMakeFiles/lab_lib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles --progress-num=3,4 "Built target lab_lib"
+.PHONY : CMakeFiles/lab_lib.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/timeconverter_lib.dir/rule: cmake_check_build_system
+CMakeFiles/lab_lib.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/timeconverter_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/lab_lib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles 0
-.PHONY : CMakeFiles/timeconverter_lib.dir/rule
+.PHONY : CMakeFiles/lab_lib.dir/rule
 
 # Convenience name for target.
-timeconverter_lib: CMakeFiles/timeconverter_lib.dir/rule
-.PHONY : timeconverter_lib
+lab_lib: CMakeFiles/lab_lib.dir/rule
+.PHONY : lab_lib
 
 # clean rule for target.
-CMakeFiles/timeconverter_lib.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter_lib.dir/build.make CMakeFiles/timeconverter_lib.dir/clean
-.PHONY : CMakeFiles/timeconverter_lib.dir/clean
+CMakeFiles/lab_lib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab_lib.dir/build.make CMakeFiles/lab_lib.dir/clean
+.PHONY : CMakeFiles/lab_lib.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/timeconverter.dir
+# Target rules for target CMakeFiles/lab.dir
 
 # All Build rule for target.
-CMakeFiles/timeconverter.dir/all: CMakeFiles/timeconverter_lib.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter.dir/build.make CMakeFiles/timeconverter.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter.dir/build.make CMakeFiles/timeconverter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles --progress-num=3,4,5 "Built target timeconverter"
-.PHONY : CMakeFiles/timeconverter.dir/all
+CMakeFiles/lab.dir/all: CMakeFiles/lab_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles --progress-num=1,2 "Built target lab"
+.PHONY : CMakeFiles/lab.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/timeconverter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/timeconverter.dir/all
+CMakeFiles/lab.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/lab.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles 0
-.PHONY : CMakeFiles/timeconverter.dir/rule
+.PHONY : CMakeFiles/lab.dir/rule
 
 # Convenience name for target.
-timeconverter: CMakeFiles/timeconverter.dir/rule
-.PHONY : timeconverter
+lab: CMakeFiles/lab.dir/rule
+.PHONY : lab
 
 # clean rule for target.
-CMakeFiles/timeconverter.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/timeconverter.dir/build.make CMakeFiles/timeconverter.dir/clean
-.PHONY : CMakeFiles/timeconverter.dir/clean
+CMakeFiles/lab.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/clean
+.PHONY : CMakeFiles/lab.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/tests.dir
 
 # All Build rule for target.
-CMakeFiles/tests.dir/all: CMakeFiles/timeconverter_lib.dir/all
+CMakeFiles/tests.dir/all: CMakeFiles/lab_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles --progress-num=1,2 "Built target tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/che4ve/MAI/LabsOOP/1/Build/CMakeFiles --progress-num=5,6 "Built target tests"
 .PHONY : CMakeFiles/tests.dir/all
 
 # Build rule for subdir invocation for target.

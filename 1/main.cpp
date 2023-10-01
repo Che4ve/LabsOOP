@@ -6,7 +6,8 @@ int main() {
     int hour, minute;
     std::string period;
     char colon; // Для разделителя времени ':'
-
+    std::cout << "Enter time in a 12-hour format: ";
+    fflush(stdout);
     // Чтение пользовательского ввода
     if (!(std::cin >> hour >> colon >> minute >> period) || colon != ':') {
         // Некорректный формат строки
