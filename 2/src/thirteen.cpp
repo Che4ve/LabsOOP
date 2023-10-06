@@ -52,9 +52,7 @@ std::string Thirteen::get() {
 }
 
 void Thirteen::printNumber() {
-    for (int i = 0; i < symbols.size(); i++) {
-        printf("%c", symbols[i]);
-    }
+    std::cout << get() << std::endl;
 }
 
 int Thirteen::inTenBase() const {

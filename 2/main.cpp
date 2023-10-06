@@ -5,15 +5,29 @@
 #include "../include/thirteen.h"
 
 int main(int argc, char** argv) {
-    Thirteen number("ab");
-    Thirteen a("baba");
-    Thirteen b("abc");
-    Thirteen c("ca");
-    std::cout << "Hello, World!" << std::endl;
+    Thirteen number;
 
-    number = a + b;
+    std::cout << "Enter number in 13-digit base: ";
+    std::string str;
+    std::cin >> str;
 
-    std::cout << number.get() << "  :  " << number.inTenBase() << std::endl;
+    number.set(str.c_str());
+
+    std::cout 
+            << number.get() << "₁₃" << "  :  " 
+            << number.inTenBase() << "₁₀" 
+            << std::endl;
+    
+    std::cout << "Enter number in 10-digit base: ";
+    int n;
+    std::cin >> n;
+
+    number.set(n);
+
+    std::cout 
+            << number.inTenBase() << "₁₀" << "  :  " 
+            << number.get() << "₁₃" 
+            << std::endl;
     
     return 0;
 }
