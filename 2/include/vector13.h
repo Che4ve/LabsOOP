@@ -14,7 +14,6 @@ class Vector13 {
         size_t vectorSize;
         size_t capacity;
 
-        
     public:
         Vector13();
         Vector13(const size_t capacity);
@@ -33,8 +32,6 @@ class Vector13 {
         int clear();
         
         int reverse();
-
-        
 
         uchar operator[](size_t index);
 

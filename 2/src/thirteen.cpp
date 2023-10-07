@@ -1,26 +1,41 @@
 #include "../include/thirteen.h"
 
 Thirteen::Thirteen() {
-    tenBaseEqiuv = 0;
+    tenBaseEquiv = 0;
     symbols.pushBack('0');
 }
 
 Thirteen::Thirteen(int tenBaseNum) {
-    set(tenBaseNum);
+    try {
+        set(tenBaseNum);
+    }
+    catch (const std::invalid_argument &e) {
+        std::cerr << "Invalid argument: " << e.what() << std::endl;
+        set(0);
+    }
 }
 
 Thirteen::Thirteen(const char* str13base) {
-    set(str13base);
+    try {
+        set(str13base);
+    }
+    catch (const std::invalid_argument &e) {
+        std::cerr << "Invalid argument: " << e.what() << std::endl;
+        set(0);
+    }
 }
 
-Thirteen::~Thirteen() {
+Thirteen::~Thirteen() noexcept {
     symbols.clear();
 }
 
 void Thirteen::set(int tenBaseNum) {
+    if (tenBaseNum < 0) {
+        throw std::invalid_argument("Negative value");
+    }
     symbols.clear();
-    tenBaseEqiuv = tenBaseNum;
-    if (tenBaseEqiuv == 0) {
+    tenBaseEquiv = tenBaseNum;
+    if (tenBaseEquiv == 0) {
         symbols.pushBack('0');
         return;
     }
@@ -34,29 +49,24 @@ void Thirteen::set(int tenBaseNum) {
 
 void Thirteen::set(const char* str13base) {
     std::string str = str13base;
-    tenBaseEqiuv = 0;
+    tenBaseEquiv = 0;
     symbols.clear();
     symbols.set(str);
     for (size_t i = 0; i < symbols.size(); i++) {
         uchar c = symbols[i];
         if (_is13base(c) == false) {
-            this->set(0);
-            return;
+            throw std::invalid_argument("Invalid 13-digit input");
         }
-        tenBaseEqiuv += _uctoi(c) * pow(13, symbols.size() - 1 - i);
+        tenBaseEquiv += _uctoi(c) * pow(13, symbols.size() - 1 - i);
     }
 }
 
-std::string Thirteen::get() {
+std::string Thirteen::get() const {
     return symbols.str();
 }
 
-void Thirteen::printNumber() {
-    std::cout << get() << std::endl;
-}
-
 int Thirteen::inTenBase() const {
-    return tenBaseEqiuv;
+    return tenBaseEquiv;
 }
 
 bool Thirteen::_is13base(uchar upperChar) {
@@ -86,12 +96,43 @@ int Thirteen::_uctoi(uchar c) {
 }
 
 Thirteen& Thirteen::operator=(const Thirteen& other) {
-    this->tenBaseEqiuv = other.tenBaseEqiuv;
-    this->set(this->tenBaseEqiuv);
+    this->tenBaseEquiv = other.tenBaseEquiv;
+    this->set(this->tenBaseEquiv);
     return *this;
 }
+Thirteen& Thirteen::operator+=(const Thirteen& other) {
+    this->tenBaseEquiv += other.tenBaseEquiv;
+    this->set(this->tenBaseEquiv);
+    return *this;
+}
+Thirteen& Thirteen::operator-=(const Thirteen& other) {
+    try {
+        this->tenBaseEquiv -= other.tenBaseEquiv;
+        this->set(this->tenBaseEquiv);
+        return *this;
+    } catch (const std::invalid_argument &e) {
+        std::cerr << "Subtraction error: " << e.what() << std::endl;
+        this->set(0);
+        return *this;
+    }
+}
 
-const Thirteen operator+(Thirteen& lhs, const Thirteen& rhs) {
+const Thirteen operator+(const Thirteen& lhs, const Thirteen& rhs) {
     Thirteen res(lhs.inTenBase() + rhs.inTenBase());
     return res;
 }
+const Thirteen operator-(const Thirteen& lhs, const Thirteen& rhs) {
+    Thirteen res(lhs.inTenBase() - rhs.inTenBase());
+    return res;
+}
+bool Thirteen::operator==(const Thirteen& other) const {
+    return this->tenBaseEquiv == other.tenBaseEquiv;
+}
+
+bool Thirteen::operator>(const Thirteen& other) const {
+    return this->tenBaseEquiv > other.tenBaseEquiv;
+}
+bool Thirteen::operator<(const Thirteen& other) const {
+    return this->tenBaseEquiv < other.tenBaseEquiv;
+}
+

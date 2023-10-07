@@ -3,12 +3,15 @@
 Vector13::Vector13() : data(nullptr), vectorSize(0), capacity(0) {}
 
 Vector13::Vector13(const size_t capacity) {
+    this->data = nullptr;
     this->vectorSize = 0;
     this->capacity = capacity;
     reserve(capacity);
 }
 
 Vector13::Vector13(std::string str13base) {
+    this->data = nullptr;
+    this->vectorSize = 0;
     set(str13base);
 }
 
@@ -17,20 +20,15 @@ Vector13::~Vector13() {
 }
 
 void Vector13::set(std::string str13base) {
-    for (int i = 0; i < str13base.length(); i++) {
-        uchar c = str13base[i];
-        if (c == ' ') {
-            str13base.erase(str13base.begin() + i);
-        } else {
-            break;
-        }
-        
+    // Remove spaces from the beginning of the string
+    while (!str13base.empty() && str13base[0] == ' ') {
+        str13base.erase(str13base.begin());
     }
-    size_t len = str13base.length();
 
-    vectorSize = 0;
+    size_t len = str13base.length();
     capacity = len;
     reserve(capacity);
+    
     for (size_t i = 0; i < len; i++) {
         uchar c = str13base[i];
         pushBack(toupper(c));
@@ -57,11 +55,13 @@ int Vector13::reserve(size_t newCapacity) {
     for (size_t i = 0; i < vectorSize; i++) {
         buffer[i] = data[i];
     }
-    capacity = newCapacity;
+    
     if (data != nullptr) {
         delete[] data;
     }
+
     data = buffer;
+    capacity = newCapacity;
     return 1;
 }
 

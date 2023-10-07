@@ -20,22 +20,20 @@ add_library(${CMAKE_PROJECT_NAME}_lib ${SOURCES})
 add_executable(${PROJECT_NAME} main.cpp)
 target_link_libraries(${PROJECT_NAME} ${CMAKE_PROJECT_NAME}_lib)
 
-# Tests
-file(GLOB_RECURSE TEST_SOURCES LIST_DIRECTORIES false ${TEST_DIR}/*.cpp)
-add_executable(tests ${TEST_SOURCES})
-target_link_libraries(tests ${CMAKE_PROJECT_NAME}_lib)
-
 # Find Google Test
 find_package(GTest REQUIRED)
 
 # Include Google Test headers
 include_directories(${GTEST_INCLUDE_DIRS})
 
-# Link your tests with Google Test
-target_link_libraries(tests ${GTEST_BOTH_LIBRARIES})
+# Create and link test executables
+file(GLOB_RECURSE TEST_SOURCES LIST_DIRECTORIES false ${TEST_DIR}/*.cpp)
+foreach(test_src ${TEST_SOURCES})
+    get_filename_component(test_name ${test_src} NAME_WE)
+    add_executable(${test_name} ${test_src})
+    target_link_libraries(${test_name} ${CMAKE_PROJECT_NAME}_lib ${GTEST_BOTH_LIBRARIES})
+    add_test(NAME ${test_name} COMMAND ${test_name})
+endforeach()
 
 # Add tests
 enable_testing()
-add_test(NAME ThirteenConstructorTest COMMAND tests)
-add_test(NAME ThirteenSetTest COMMAND tests)
-add_test(NAME ThirteenAlgebraTest COMMAND tests)
