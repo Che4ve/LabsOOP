@@ -57,4 +57,7 @@ class Square : public Rectangle {
     public:
         Square();
         ~Square() = default;
+        
+    protected:
+        void readVertices(std::istream& is) override;
 };

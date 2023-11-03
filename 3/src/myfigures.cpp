@@ -20,8 +20,15 @@ void Triangle::readVertices(std::istream& is) {
     is >> b;
     std::cout << "Enter third vertex coordinates: ";
     is >> c;
-}
+    // Check if the entered coordinates form a valid triangle
+    double lA = a.distanceTo(b);
+    double lB = b.distanceTo(c);
+    double lC = c.distanceTo(a);
 
+    if (lA + lB <= lC || lB + lC <= lA || lC + lA <= lB) {
+        std::cerr << "The entered coordinates do not form a valid triangle." << std::endl;
+    }
+}
 
 Figure& Triangle::_copy(const Figure& other) {
     const Triangle* otherTr = dynamic_cast<const Triangle*>(&other);
@@ -93,9 +100,16 @@ void Rectangle::readVertices(std::istream& is) {
     is >> c;
     std::cout << "Enter 4th vertex coordinates: ";
     is >> d;
-    std::cout << sideA << " " << sideB << std::endl;
+    //std::cout << sideA << " " << sideB << std::endl;
+    // Check if the figure is a rectangle
+    double lA = a.distanceTo(b);
+    double lB = b.distanceTo(c);
+    double lC = c.distanceTo(d);
+    double lD = d.distanceTo(a);
 
-    //TODO: check for a rectangle
+    if (lA != lC || lB != lD) {
+        std::cerr << "The entered coordinates do not form a rectangle." << std::endl;
+    }
 }
 
 Figure& Rectangle::_copy(const Figure& other) {
@@ -145,3 +159,24 @@ double Rectangle::getArea() const {
 
 Square::Square() : Rectangle() {};
 
+void Square::readVertices(std::istream& is) {
+    std::cout << "Enter 1st vertex coordinates (ex. '2.1 , 3.4'): ";
+    is >> a;
+    std::cout << "Enter 2nd vertex coordinates: ";
+    is >> b;
+    std::cout << "Enter 3rd vertex coordinates: ";
+    is >> c;
+    std::cout << "Enter 4th vertex coordinates: ";
+    is >> d;
+    // Check if the figure is a rectangle
+    double lA = a.distanceTo(b);
+    double lB = b.distanceTo(c);
+    double lC = c.distanceTo(d);
+    double lD = d.distanceTo(a);
+
+    if (lA != lC || lB != lD) {
+        std::cerr << "The entered coordinates do not form a rectangle." << std::endl;
+    } else if (lA != lB || lB != lC || lC != lD) {
+        std::cerr << "The entered coordinates do not form a square." << std::endl;
+    }
+}

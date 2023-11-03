@@ -6,13 +6,21 @@
 #include "./include/vector.h"
 
 int main(int argc, char** argv) {
-    // Triangle tr;
+    Triangle tr;
 
-    // std::cin >> tr;
+    std::cin >> tr;
 
-    // std::cout << tr;
+    std::cout << tr;
 
-    // std::cout << tr.center() << std::endl;
+    std::cout << tr.center() << std::endl;
+
+    std::cout << "TRIANGLE----------------------------" << std::endl;
+
+    tr.a = Point2D(1, 1);
+    tr.b = Point2D(3.5, 5);
+    tr.c = Point2D(1.5, 0);
+    std::cout << tr.center() << std::endl;
+    std::cout << double(tr) << std::endl;
 
     Rectangle rect;
 
@@ -24,19 +32,11 @@ int main(int argc, char** argv) {
     //std::cin >> rect;
 
     //std::cout << rect;
+    std::cout << "RECT--------------------------------" << std::endl;
     std::cout << rect.center() << std::endl;
     std::cout << double(rect) << std::endl;
-
-    std::cout << "--------------------------------" << std::endl;
-
-    Triangle tr;
-    tr.a = Point2D(0, 0);
-    tr.b = Point2D(0, 5);
-    tr.c = Point2D(1, 0);
-    std::cout << tr.center() << std::endl;
-    std::cout << double(tr) << std::endl;
-
-    std::cout << "--------------------------------" << std::endl;
+    
+    std::cout << "SUM---------------------------------" << std::endl;
 
     Triangle tr2 = tr;
 
