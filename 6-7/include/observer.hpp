@@ -6,6 +6,8 @@
 #include <fstream>
 #include <chrono>
 
+constexpr int KILLFEED_SIZE = 3;
+
 class IEventListener {
 public:
     virtual ~IEventListener(){};
@@ -121,7 +123,7 @@ public:
     }
 
 private:
-    const unsigned long _KillfeedSize{ 3 };
+    const unsigned long _KillfeedSize{ KILLFEED_SIZE };
 
     InGameEventManager &_manager;
     std::deque<std::string> _killfeed{ _KillfeedSize, "-" };

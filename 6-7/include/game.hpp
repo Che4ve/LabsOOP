@@ -20,7 +20,7 @@
 
 const char EMPTY_CELL = '.';
 const char PLAYER_CELL = 'P';
-const char ATTACK_CELL = '*';
+const char ATTACK_CELL = ',';
 const char ELF_CELL = 'E';
 const char BEAR_CELL = 'B';
 const char THIEF_CELL = 'T';
@@ -104,6 +104,10 @@ public:
 
     Player* getPlayer() { return _player; }
 
+    void deleteAllNPCs() {
+        _npc_list.clear();
+    }
+
     void removeNPC(NPC* targetNpc) {
         auto it = std::find_if(_npc_list.begin(), _npc_list.end(),
             [targetNpc](const NPC* npc)  { return targetNpc == npc; });
@@ -136,11 +140,23 @@ public:
         }
     }
 
+    void clearMap() {
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                if (!isNpcCell(x, y)) {
+                    setElement(x, y, EMPTY_CELL);
+                }
+            }
+        }
+    }
+
     std::string getMenu() {
         std::string res;
         std::stringstream ss;
         ss << "  [w|a|s|d] Movement\n" 
            << "  [+] Add NPC\n"
+           << "  [-] Delete all NPCs\n"
+           << "  [r] Spawn random NPCs\n"
            << "  [f] Switch Battle Mode\n"
            << "  [p] Print NPCs data\n"
            << "  [<] Load NPCs from file\n"
@@ -156,6 +172,16 @@ public:
             case ELF_CELL: case BEAR_CELL: case THIEF_CELL: return true;
         }
         return false;
+    }
+
+    std::vector<NPC*> getSurvivors() {
+        std::vector<NPC*> survivors;
+        for (NPC* npc : _npc_list) {
+            if (npc->isAlive()) {
+                survivors.push_back(npc);
+            }
+        }
+        return survivors;
     }
 
     char getElement(int x, int y) const { 
@@ -260,13 +286,13 @@ public:
         if (attackerRoll > defenderRoll) {
             _attacker->attack(_target);
             _game.drawLine(_target->x, _target->y, 
-                       _attacker->x, _attacker->y, '*');
+                       _attacker->x, _attacker->y, ',');
             
             _game.setElement(_target->x, _target->y, '0');
             _notifyAboutKill();
         } else {
             _game.drawLine(_target->x, _target->y, 
-                       _attacker->x, _attacker->y, ',');
+                       _attacker->x, _attacker->y, '`');
         }
         
     }
@@ -378,6 +404,8 @@ private:
 
 static struct termios stored_settings;
 
+constexpr int RANDOM_NPC_AMOUNT = 10;
+
 class GameThread {
 public:
     GameThread(Game &game, PrintingListener &killfeed) : 
@@ -386,6 +414,7 @@ public:
     void operator()() {
         _setKeypress();
         std::thread inputThread{&GameThread::_getInput, this};
+        std::thread(&GameThread::_IshowSurvivors, this).detach();
 
         Player* player = _game.getPlayer();
         // Цикл игры
@@ -419,10 +448,14 @@ public:
                 if (input == 'q') {
                     _game.resume();
                     _game.stop();
+                    
                     break;
                 }
                 if (input == '+') {
                     std::thread(&GameThread::_IaddNPCLogic, this).join();
+                }
+                if (input == '-') {
+                    std::thread(&GameThread::_deleteNPCs, this).join();
                 }
                 if (input == '<') {
                     std::thread(&GameThread::_IloadFromFileLogic, this).join();
@@ -432,6 +465,9 @@ public:
                 }
                 if (input == 'p') {
                     std::thread(&GameThread::_IshowNPCDataLogic, this).join();
+                }
+                if (input == 'r') {
+                    std::thread(&GameThread::_spawnRandomNPCs, this).join();
                 }
                 if (input == 'f') {
                     if (_game.isPaused()) {
@@ -595,6 +631,57 @@ private:
         _prepareForGameplay();
     }
 
+    void _IshowSurvivors() {
+        std::this_thread::sleep_for(std::chrono::seconds(30));
+        {
+            std::lock_guard<std::mutex> lockI(_inputMutex);
+            _game.pause();
+            system("clear");
+            {
+                std::lock_guard<std::mutex> lock(outputMutex);
+                std::cout << "Press any button to show SURVIVORS." << std::endl;
+            }
+            fflush(stdin);
+            system("clear");
+            
+            {
+                
+                std::lock_guard<std::mutex> lock(outputMutex);
+                std::cout << "30 seconds have passed ... " << std::endl;
+                std::cout << "SURVIVORS: " << std::endl;
+                std::vector<NPC*> survivors = _game.getSurvivors();
+                for (NPC* npc : survivors) {
+                    std::cout << *npc << std::endl;
+                }
+            }
+            
+            std::this_thread::sleep_for(std::chrono::seconds(2));
+            _resetKeypress();
+            {
+                std::lock_guard<std::mutex> lock(outputMutex);
+                std::cout << "Enter to continue..." << std::endl;
+            }
+            std::getchar();
+            fflush(stdin);
+            _setKeypress();
+        }
+    }
+
+    void _spawnRandomNPCs() {
+        _game.pause();
+        _game.deleteAllNPCs();
+        _game.clearMap();
+        for (int i = 0; i < RANDOM_NPC_AMOUNT; i++) {
+            _game.addNPC(createRandomNPC(_game.getWidth(), _game.getHeight()));
+        }
+    }
+
+    void _deleteNPCs() {
+        _game.pause();
+        _game.deleteAllNPCs();
+        _game.clearMap();
+    }
+
 public:
     bool isPaused{ true };
 
@@ -602,8 +689,6 @@ private:
     Game &_game;
     PrintingListener &_killfeed;
     std::atomic_char _userInput{ '\0' };
-    std::string _inputStr;
     std::mutex _inputMutex;
-    std::mutex _interfaceMutex;
 
 };

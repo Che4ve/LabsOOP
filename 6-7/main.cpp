@@ -22,14 +22,8 @@ int main() {
     LoggingListener logger{ logFileName, game.getEventManager() };
     PrintingListener killfeed{ game.getEventManager() };
  
-    Player player{ 1, 2 };
+    Player player{ 2, 2 };
     game.addPlayer(&player);
-
-    // std::vector<NPC*> npcList{ loadNPCsFromFile("npclist.txt") };
-
-    // for (NPC* npc : npcList) {
-    //     game.addNPC(npc);
-    // }
 
     GameThread gameThreadClassInstance{ game, killfeed };
     std::thread gameThread{ std::ref(gameThreadClassInstance) };

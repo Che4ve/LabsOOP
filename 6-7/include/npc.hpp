@@ -254,3 +254,26 @@ void saveNPCsToFile(const std::string& filename, const std::vector<NPC*>& npcs) 
         std::cerr << "Error opening file " << filename << std::endl;
     }
 }
+
+NPC* createRandomNPC(int xBound, int yBound) {
+    int nameLen = std::rand() % 10 + 1;
+    const char alphanum[] =
+        "0123456789"
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        "abcdefghijklmnopqrstuvwxyz";
+
+    std::string name;
+    name.reserve(nameLen);
+    for (int i = 0; i < nameLen; ++i) {
+        name += alphanum[rand() % (sizeof(alphanum) - 1)];
+    }
+    NPCType type = static_cast<NPCType>(std::rand() % 3);
+    int x = std::rand() % xBound;
+    int y = std::rand() % yBound;
+
+
+    NPCFactory factory;
+    NPC* randomNPC = factory.createNPC(type, x, y, name);
+
+    return randomNPC;
+}
